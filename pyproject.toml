@@ -1,0 +1,48 @@
+[project]
+name = "rhetorical-analysis-skill"
+version = "0.1.0"
+description = "Claude skill for rhetorical and epistemological analysis of articles"
+readme = "SKILL.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Bastien", email = "bastien@gallay.org"}
+]
+keywords = ["claude", "skill", "rhetoric", "analysis", "toulmin", "argumentation"]
+
+dependencies = [
+    "openpyxl>=3.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "jsonschema>=4.0.0",
+    "httpx>=0.25.0",           # Pour fetch URL
+    "beautifulsoup4>=4.12.0",  # Pour extraction HTML
+    "readability-lxml>=0.8.0", # Pour extraction contenu article
+]
+
+[project.scripts]
+generate-analysis = "scripts.generate_analysis:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]
+ignore = ["E501"]  # Line too long - géré par formatter
