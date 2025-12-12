@@ -4,6 +4,7 @@
 
 - **Analyse d'URL** : Script `analyze_url.py` avec readability-lxml pour analyser directement une URL
 - **Packaging du Skill** : Créer une tache permettant la distribution rapide du Claude Skill
+- **Tests unitaires** : Couvrir `generate_analysis.py` avec des tests pytest
 
 ## Priorité moyenne
 

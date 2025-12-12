@@ -44,11 +44,14 @@ uv run pytest tests/ -v
 # Générer un rapport depuis un JSON
 uv run python scripts/generate_analysis.py input.json output.xlsx
 
-# Valider le skill avant packaging
-uv run python scripts/validate_skill.py .
+# Packager le skill (valide + génère l'archive)
+uv run python scripts/package_skill.py
 
-# Packager le skill
-zip -r rhetorical-analysis-skill.skill . -x "*.git*" -x "*__pycache__*" -x "*.pytest_cache*" -x "tests/*"
+# Prévisualiser le contenu du package sans créer l'archive
+uv run python scripts/package_skill.py --dry-run
+
+# Packager dans un répertoire spécifique
+uv run python scripts/package_skill.py --output dist/
 ```
 
 ## Conventions
