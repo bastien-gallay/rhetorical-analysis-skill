@@ -50,6 +50,7 @@ Voir `references/fallacies-catalog.md` pour la liste complète des sophismes à 
 
 1. Produire l'analyse au format JSON (voir `assets/example_analysis.json` pour le schéma)
 2. Exécuter le script de génération :
+
    ```bash
    python scripts/generate_analysis.py analysis.json rapport.xlsx
    ```

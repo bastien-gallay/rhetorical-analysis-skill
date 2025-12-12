@@ -142,4 +142,5 @@
 4. **Biais de l'analyste** : Même un LLM a des biais dans son training
 5. **Textes complexes** : Arguments imbriqués, ironie, métaphores filées
 
-**Recommandation** : L'analyse automatisée est un outil d'aide, pas un juge final. Toujours croiser avec un regard humain critique.
+**Recommandation** : L'analyse automatisée est un outil d'aide, pas un juge final.
+Toujours croiser avec un regard humain critique.
