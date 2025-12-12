@@ -1,21 +1,22 @@
-# Backlog d'idées
+# Backlog
 
-## Améliorations possibles
+## Priorité haute
 
-Pour aller plus loin sur ce skill :
+- **Analyse d'URL** : Script `analyze_url.py` avec readability-lxml pour analyser directement une URL
+- **Packaging du Skill** : Créer une tache permettant la distribution rapide du Claude Skill
 
-- Intégrer web_fetch pour analyser directement une URL sans copier-coller
-- Ajouter un mode interactif où Claude pose des questions de clarification
-- Créer des visualisations (graphe d'argumentation en Mermaid)
+## Priorité moyenne
+
+- **Export Mermaid** : Visualisation du graphe d'argumentation
+- **CI/CD** : GitHub Actions pour les tests et le packaging
+
+## Priorité basse
+
+- **Prompt template** : Optimiser le prompt pour améliorer la qualité des analyses
+- **Mode batch** : Analyser plusieurs articles en une passe
+- **Validation JSON** : Implémenter un schéma jsonschema pour valider les analyses
+
+## Idées à explorer
+
+- Mode interactif où Claude pose des questions de clarification
 - Versionner les analyses pour suivre l'évolution d'un débat dans le temps
-
-## Features à implémenter
-
-| Priorité | Tâche                                         | Complexité |
-| -------- | --------------------------------------------- | ---------- |
-| 🔴        | Schéma JSON validé avec jsonschema            | Faible     |
-| 🔴        | Script `analyze_url.py` avec readability-lxml | Moyenne    |
-| 🟡        | Export Mermaid du graphe d'argumentation      | Moyenne    |
-| 🟡        | Mode batch multi-articles                     | Moyenne    |
-| 🟢        | Prompt template optimisé pour Claude          | Faible     |
-| 🟢        | CI/CD avec GitHub Actions                     | Faible     |
