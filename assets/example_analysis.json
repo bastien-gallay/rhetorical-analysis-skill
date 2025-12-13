@@ -1,113 +1,148 @@
 {
     "metadata": {
-        "title": "Oui, mais l'IAg... - Réponses à quelques arguments courants en faveur de l'IA générative",
-        "source": "https://atecopol.hypotheses.org/12971",
-        "date_analysis": "2025-12-12",
-        "analyst": "Claude"
+        "title": "[Exemple synthétique] Tribune : Pour une mobilité urbaine repensée",
+        "source": "Contenu fictif créé pour démonstration",
+        "date_analysis": "2025-01-01",
+        "analyst": "Claude",
+        "license": "CC0 - Domaine public",
+        "note": "Cet exemple est entièrement fictif et conçu pour illustrer les différentes structures argumentatives et niveaux de fiabilité."
     },
     "arguments": [
         {
             "id": 1,
-            "label": "L'IAg peut être verte/sobre/efficace énergétiquement",
-            "original_text": "L'étendue de l'infrastructure sociotechnique rendant l'IAg possible devrait suffire à comprendre que son coût écologique est nécessairement colossal. [...] L'AIE indique que la consommation électrique des datacenters devrait doubler d'ici 2030 pour atteindre 945 TWh.",
-            "claim": "L'IAg ne peut pas être écologiquement soutenable, même optimisée",
-            "grounds": "1) Infrastructure massive, 2) Effet rebond annule les gains, 3) Énergie bas-carbone limitée",
-            "warrant": "Ce qui consomme massivement des ressources limitées ne peut être qualifié de 'sobre'",
-            "backing": "Données AIE sur la consommation des datacenters, concept économique de l'effet rebond",
-            "qualifier": "Même 'parfaitement écoconçue'",
-            "rebuttal": "Non reconnu explicitement",
-            "reasoning_type": "Raisonnement factuel + argument du coût d'opportunité",
+            "label": "Argument factuel bien sourcé",
+            "original_text": "Les transports représentent 31% des émissions de GES en France selon le CITEPA. La voiture individuelle en constitue la moitié. Réduire cette part est donc un levier majeur de décarbonation.",
+            "claim": "La réduction de l'usage de la voiture individuelle est un levier important de décarbonation",
+            "grounds": "31% des émissions = transports, dont 50% = voiture individuelle",
+            "warrant": "Agir sur les postes d'émission les plus importants maximise l'impact",
+            "backing": "Données CITEPA (inventaire national officiel)",
+            "qualifier": "En France",
+            "rebuttal": "Non mentionné (pourrait être : efficacité variable selon les territoires)",
+            "reasoning_type": "Raisonnement factuel avec données chiffrées",
             "fallacies": [],
-            "reliability": 4,
-            "reliability_rationale": "Source AIE citée (organisme reconnu). L'effet rebond est un concept économique établi (paradoxe de Jevons). Seule faiblesse : l'affirmation 'nécessairement colossal' est un jugement de valeur.",
+            "reliability": 5,
+            "reliability_rationale": "Source officielle (CITEPA), données vérifiables, raisonnement logique valide.",
             "sources_cited": [
                 {
-                    "name": "Agence Internationale de l'Énergie (AIE)",
+                    "name": "CITEPA - Inventaire national des émissions",
                     "craap_score": {
                         "currency": 5,
                         "relevance": 5,
                         "authority": 5,
-                        "accuracy": 4,
-                        "purpose": 4
-                    }
-                },
-                {
-                    "name": "Shift Project",
-                    "craap_score": {
-                        "currency": 5,
-                        "relevance": 5,
-                        "authority": 4,
-                        "accuracy": 4,
-                        "purpose": 3
+                        "accuracy": 5,
+                        "purpose": 5
                     }
                 }
             ],
-            "comment": "Argument solide. La référence aux SMR pour datacenters renforce le propos."
+            "comment": "Exemple d'argument solide : données officielles, raisonnement clair, conclusion proportionnée."
         },
         {
             "id": 2,
-            "label": "L'IAg souveraine développée en France/local",
-            "original_text": "Ni la France ni l'Europe ne disposent des capacités financières et industrielles pour développer des entreprises de l'IAg entièrement européennes. [...] les puces sont le quasi-monopole de NVidia.",
-            "claim": "La souveraineté numérique en IAg est illusoire",
-            "grounds": "1) Dépendance NVidia, 2) Capacités financières insuffisantes, 3) Même coût écologique",
-            "warrant": "Sans maîtrise de la chaîne complète, pas de véritable souveraineté",
-            "backing": "Trajectoire de Mistral AI comme contre-exemple",
+            "label": "Argument avec sophisme identifié",
+            "original_text": "Les opposants au vélo en ville sont les mêmes qui s'opposaient au métro au XIXe siècle. Ils avaient tort alors, ils ont tort maintenant.",
+            "claim": "L'opposition au vélo urbain est injustifiée",
+            "grounds": "Analogie historique avec l'opposition au métro",
+            "warrant": "Les oppositions passées au progrès se sont révélées infondées",
+            "backing": "Référence historique non sourcée",
             "qualifier": "",
-            "rebuttal": "La comparaison avec Airbus suggère que des efforts coordonnés PEUVENT fonctionner",
-            "reasoning_type": "Raisonnement factuel + argument d'impossibilité pratique",
-            "fallacies": [],
-            "reliability": 3,
-            "reliability_rationale": "Le monopole NVidia est factuel. L'impossibilité européenne est partiellement spéculative (dépend de choix politiques futurs).",
-            "sources_cited": [
+            "rebuttal": "Non reconnu",
+            "reasoning_type": "Argument par analogie historique",
+            "fallacies": [
                 {
-                    "name": "Trajectoire Mistral AI (L'essentiel de l'éco)",
-                    "craap_score": {
-                        "currency": 4,
-                        "relevance": 4,
-                        "authority": 3,
-                        "accuracy": 3,
-                        "purpose": 3
-                    }
+                    "name": "Fausse analogie",
+                    "description": "Le contexte, les enjeux et les opposants ne sont pas comparables entre métro (XIXe) et vélo (XXIe)",
+                    "severity": "modérée"
+                },
+                {
+                    "name": "Homme de paille",
+                    "description": "Les opposants actuels au vélo ne sont pas caractérisés précisément",
+                    "severity": "légère"
                 }
             ],
-            "comment": "L'argument mélange des faits et des projections contestables."
+            "reliability": 2,
+            "reliability_rationale": "Analogie forcée, aucune source, généralisations abusives sur 'les opposants'.",
+            "sources_cited": [],
+            "comment": "Exemple de sophisme : l'analogie historique ne prouve rien sur le débat actuel."
         },
         {
             "id": 3,
-            "label": "Pour tel usage, l'IAg c'est pratique",
-            "original_text": "C'est le propre des techniques que de permettre un gain d'efficacité, mais si le prix global à payer est insoutenable [...] amiante, bisphénol A, mines antipersonnel...",
-            "claim": "La praticité ne suffit pas à justifier l'usage si les externalités sont trop importantes",
-            "grounds": "Exemples de technologies utiles abandonnées ou interdites",
-            "warrant": "Ce qui a des externalités insoutenables doit être abandonné malgré son utilité",
-            "backing": "Liste d'exemples historiques (amiante, plomb, etc.)",
+            "label": "Argument d'autorité partiel",
+            "original_text": "Selon une étude de l'université de Villefranche, 73% des trajets domicile-travail font moins de 10 km, distance parfaitement cyclable.",
+            "claim": "La majorité des trajets domicile-travail sont réalisables à vélo",
+            "grounds": "73% des trajets < 10 km",
+            "warrant": "10 km est une distance cyclable",
+            "backing": "Étude universitaire (non vérifiable)",
+            "qualifier": "trajets domicile-travail uniquement",
+            "rebuttal": "Conditions météo, dénivelé, charge transportée non pris en compte",
+            "reasoning_type": "Argument factuel avec source académique",
+            "fallacies": [],
+            "reliability": 3,
+            "reliability_rationale": "Source académique mais non vérifiable. Le raisonnement ignore des facteurs importants (météo, handicap, âge).",
+            "sources_cited": [
+                {
+                    "name": "Université de Villefranche (fictive)",
+                    "craap_score": {
+                        "currency": 3,
+                        "relevance": 4,
+                        "authority": 3,
+                        "accuracy": 3,
+                        "purpose": 4
+                    }
+                }
+            ],
+            "comment": "Exemple de source académique insuffisamment référencée. Le raisonnement est valide mais incomplet."
+        },
+        {
+            "id": 4,
+            "label": "Argument émotionnel avec appel à la peur",
+            "original_text": "Si nous ne changeons pas nos habitudes maintenant, nos enfants vivront dans des villes irrespirables où les canicules tueront des milliers de personnes chaque été.",
+            "claim": "Le changement de comportement est urgent",
+            "grounds": "Scénario catastrophe (villes irrespirables, mortalité canicules)",
+            "warrant": "La gravité des conséquences justifie l'action immédiate",
+            "backing": "Aucune source citée",
             "qualifier": "",
             "rebuttal": "Non reconnu",
-            "reasoning_type": "Argument par analogie",
-            "fallacies": ["Fausse équivalence (amiante/IAg)", "Pétition de principe partielle ('insoutenable' présupposé)"],
+            "reasoning_type": "Argument émotionnel / appel à la peur",
+            "fallacies": [
+                {
+                    "name": "Appel à la peur",
+                    "description": "Utilisation de scénarios catastrophes pour court-circuiter le raisonnement critique",
+                    "severity": "modérée"
+                },
+                {
+                    "name": "Faux dilemme",
+                    "description": "Présente le choix comme binaire (changer maintenant ou catastrophe)",
+                    "severity": "légère"
+                }
+            ],
             "reliability": 2,
-            "reliability_rationale": "Les exemples cités sont des ÉQUIVALENCES FORCÉES. L'amiante tue directement, l'IAg non. La structure logique est faible.",
+            "reliability_rationale": "Aucune source, scénario non quantifié, manipulation émotionnelle.",
             "sources_cited": [],
-            "comment": "Sophisme de la fausse équivalence. Mélange technologies avec danger direct et indirect."
+            "comment": "Exemple d'appel à l'émotion : peut être persuasif mais ne constitue pas un argument rationnel."
         }
     ],
     "synthesis": {
         "strengths": [
-            "Arguments 1 et 5 sont les plus solides : sourcés (AIE, Shift Project), raisonnements valides",
-            "La critique de la fausse analogie avec l'écriture est bien construite",
-            "Références à des concepts établis (effet rebond, verrouillage sociotechnique)"
+            "Argument 1 : excellente utilisation de données officielles avec raisonnement valide",
+            "Argument 3 : tente de s'appuyer sur une source académique"
         ],
         "weaknesses": [
-            "Argument 3 : fausse équivalence entre IAg et amiante/bombes",
-            "Argument 4 : généralisation hâtive à partir du précédent Internet",
-            "Argument 7 : raisonnement circulaire",
-            "Absence générale de contre-arguments ou nuances (texte militant)"
+            "Argument 2 : analogie historique non pertinente",
+            "Argument 4 : appel à la peur sans données",
+            "Manque général de contre-arguments et de nuances"
         ],
         "recurring_patterns": [
-            "Questions rhétoriques ('À quoi sert de gagner la course si...')",
-            "Arguments d'autorité (AIE, Shift Project, Code de l'éducation)",
-            "Fausses équivalences",
-            "Pétitions de principe partielles"
+            "Mélange d'arguments factuels et émotionnels",
+            "Sources de qualité variable (officielle vs non vérifiable)",
+            "Absence de reconnaissance des limites"
         ],
-        "methodological_note": "Ce texte est explicitement un document militant (addendum à un manifeste). Il ne prétend pas à la neutralité académique. L'évaluation juge la solidité des arguments, non leur conclusion."
+        "overall_craap_score": {
+            "currency": 4,
+            "relevance": 4,
+            "authority": 3,
+            "accuracy": 3,
+            "purpose": 3
+        },
+        "methodological_note": "Cet exemple synthétique illustre différents niveaux de qualité argumentative. Dans une analyse réelle, chaque argument serait évalué avec les mêmes critères."
     }
 }

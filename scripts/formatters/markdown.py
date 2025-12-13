@@ -1,3 +1,23 @@
+def format_fallacies(fallacies: list) -> str:
+    """Format fallacies list to string, supporting both string and dict formats."""
+    if not fallacies:
+        return "Aucun détecté"
+
+    result = []
+    for f in fallacies:
+        if isinstance(f, str):
+            result.append(f)
+        elif isinstance(f, dict):
+            name = f.get("name", "Inconnu")
+            severity = f.get("severity", "")
+            if severity:
+                result.append(f"{name} ({severity})")
+            else:
+                result.append(name)
+
+    return ", ".join(result) if result else "Aucun détecté"
+
+
 def save_report(data: dict, output_path: str) -> bool:
     """
     Génère un rapport Markdown à partir du dictionnaire d'analyse.
@@ -37,7 +57,7 @@ def save_report(data: dict, output_path: str) -> bool:
         markdown_content.append(f"**Texte original (extrait):**\n> {arg.get('original_text', '')}\n")
         markdown_content.append(f"**Thèse (Claim):** {arg.get('claim', '')}")
         markdown_content.append(f"**Type de raisonnement:** {arg.get('reasoning_type', '')}")
-        markdown_content.append(f"**Sophismes détectés:** {', '.join(arg.get('fallacies', ['Aucun détecté']))}")
+        markdown_content.append(f"**Sophismes détectés:** {format_fallacies(arg.get('fallacies', []))}")
         markdown_content.append(f"**Fiabilité (1-5):** {arg.get('reliability', 3)}")
         markdown_content.append(f"**Évaluation de la fiabilité:** {arg.get('reliability_rationale', '')}")
         markdown_content.append(f"**Commentaire:** {arg.get('comment', '')}\n")

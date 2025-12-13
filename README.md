@@ -11,6 +11,22 @@ A Claude skill for rhetorical and epistemological analysis of articles, speeches
 - **Fallacy Detection**: Identify logical fallacies from a comprehensive catalog
 - **XLSX Report Generation**: Export structured analysis to Excel format
 
+## Example Data
+
+This repository includes example analysis files that are either **synthetic** (created for
+demonstration) or **public domain** content:
+
+| File | Content | License |
+|------|---------|---------|
+| `assets/example_analysis.json` | Synthetic article on urban mobility | CC0 (Public Domain) |
+| `assets/example_ddhc_1789.json` | Declaration of Rights of Man 1789 | Public Domain |
+
+These examples demonstrate the analysis format without any copyright concerns. To analyze
+your own articles, see the [JSON Schema documentation](assets/SCHEMA.md).
+
+**Note**: The `benchmark/` directory (if present) may contain analyses of copyrighted
+content and is excluded from the distributed package and git tracking.
+
 ## Download
 
 Pre-packaged `.skill` archives are available for download from [GitHub Releases](https://github.com/bastiengallay/rhetorical-analysis-skill/releases).
@@ -38,6 +54,7 @@ uv run python scripts/generate_analysis.py input.json output.[xlsx|json|md] --fo
 ```
 
 **Examples:**
+
 ```bash
 uv run python scripts/generate_analysis.py analysis.json rapport_analyse.xlsx --format xlsx
 uv run python scripts/generate_analysis.py analysis.json analysis_output.json --format json
@@ -79,6 +96,7 @@ The following patterns are excluded from the archive by default:
 | Linters         | `.ruff_cache/`, `.mypy_cache/`, `.markdownlint.json`                              |
 | Build           | `uv.lock`                                                                         |
 | Development     | `openspec/`, `docs/`, `CLAUDE.md`, `AGENTS.md`                                    |
+| Data            | `benchmark/` (may contain copyrighted content)                                    |
 | OS              | `.DS_Store`                                                                       |
 
 #### Output
@@ -105,7 +123,10 @@ uv run pytest tests/ -v
 │   ├── fallacies-catalog.md
 │   └── existing-frameworks-and-tools.md
 ├── assets/               # Example files and templates
-│   └── example_analysis.json
+│   ├── example_analysis.json    # Synthetic example (CC0)
+│   ├── example_ddhc_1789.json   # Public domain example
+│   └── SCHEMA.md                # JSON format documentation
+├── benchmark/            # Benchmark data (not distributed)
 └── tests/                # Unit tests
 ```
 

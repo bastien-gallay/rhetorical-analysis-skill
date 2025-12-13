@@ -61,6 +61,8 @@ DEFAULT_EXCLUSIONS = [
     "docs/",
     "AGENTS.md",
     "CLAUDE.md",
+    # Benchmark data (may contain copyrighted content)
+    "benchmark/",
 ]
 
 

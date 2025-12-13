@@ -30,6 +30,26 @@ def get_reliability_fill(score: int) -> PatternFill:
         return STYLES["reliability_low"]
 
 
+def format_fallacies(fallacies: list) -> str:
+    """Format fallacies list to string, supporting both string and dict formats."""
+    if not fallacies:
+        return "Aucun détecté"
+
+    result = []
+    for f in fallacies:
+        if isinstance(f, str):
+            result.append(f)
+        elif isinstance(f, dict):
+            name = f.get("name", "Inconnu")
+            severity = f.get("severity", "")
+            if severity:
+                result.append(f"{name} ({severity})")
+            else:
+                result.append(name)
+
+    return "\n".join(result) if result else "Aucun détecté"
+
+
 def create_main_analysis_sheet(wb: Workbook, data: dict) -> None:
     """Crée la feuille principale d'analyse des arguments."""
     ws = wb.active
@@ -63,7 +83,7 @@ def create_main_analysis_sheet(wb: Workbook, data: dict) -> None:
             arg.get("original_text", "")[:500] + ("..." if len(arg.get("original_text", "")) > 500 else ""),
             arg.get("claim", ""),
             arg.get("reasoning_type", ""),
-            "\n".join(arg.get("fallacies", [])) if arg.get("fallacies") else "Aucun détecté",
+            format_fallacies(arg.get("fallacies", [])),
             arg.get("reliability", 3),
             arg.get("reliability_rationale", ""),
             arg.get("comment", "")
