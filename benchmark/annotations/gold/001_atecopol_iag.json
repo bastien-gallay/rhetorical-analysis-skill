@@ -1,0 +1,175 @@
+{
+    "_meta": {
+        "annotator": "human_expert",
+        "date": "2025-12-12",
+        "version": "1.0",
+        "notes": "Annotation de référence pour calibration. Article militant, contexte assumé."
+    },
+    "metadata": {
+        "title": "Oui, mais l'IAg... - Réponses à quelques arguments courants en faveur de l'IA générative",
+        "source": "https://atecopol.hypotheses.org/12971",
+        "date_publication": "2025-11-28",
+        "type": "militant",
+        "language": "fr"
+    },
+    "arguments": [
+        {
+            "id": 1,
+            "label": "L'IAg ne peut pas être verte/sobre",
+            "original_text": "L'étendue de l'infrastructure sociotechnique rendant l'IAg possible devrait suffire à comprendre que son coût écologique est nécessairement colossal.",
+            "claim": "L'IAg ne peut pas être écologiquement soutenable même optimisée",
+            "grounds": "Infrastructure massive (datacenters, terminaux), données AIE sur doublement consommation 2030",
+            "warrant": "Ce qui nécessite une infrastructure massive ne peut être sobre",
+            "backing": "Rapport AIE, rapport Shift Project",
+            "qualifier": "Même 'parfaitement écoconçue'",
+            "rebuttal": "",
+            "reasoning_type": "Argument factuel + coût d'opportunité",
+            "fallacies": [],
+            "reliability": 4,
+            "reliability_rationale": "Sources AIE et Shift Project citées (organismes reconnus). Effet rebond établi en économie. Jugement 'nécessairement colossal' subjectif.",
+            "sources_cited": [
+                {"name": "AIE", "type": "institution", "quality": "high"},
+                {"name": "Shift Project", "type": "think_tank", "quality": "medium-high"}
+            ]
+        },
+        {
+            "id": 2,
+            "label": "La souveraineté numérique IAg est illusoire",
+            "original_text": "Ni la France ni l'Europe ne disposent des capacités financières et industrielles pour développer des entreprises de l'IAg entièrement européennes.",
+            "claim": "La souveraineté numérique en IAg est illusoire pour l'Europe",
+            "grounds": "Dépendance NVidia, trajectoire Mistral AI, manque de capacités financières",
+            "warrant": "Sans maîtrise de la chaîne complète, pas de souveraineté",
+            "backing": "Exemple Mistral AI",
+            "qualifier": "",
+            "rebuttal": "Comparaison Airbus suggère que des efforts coordonnés peuvent fonctionner",
+            "reasoning_type": "Argument factuel + impossibilité pratique",
+            "fallacies": [],
+            "reliability": 3,
+            "reliability_rationale": "Monopole NVidia factuel. Impossibilité européenne partiellement spéculative. Contre-exemple Airbus non traité.",
+            "sources_cited": [
+                {"name": "L'essentiel de l'éco (Mistral)", "type": "media", "quality": "medium"}
+            ]
+        },
+        {
+            "id": 3,
+            "label": "La praticité ne justifie pas tout",
+            "original_text": "Se prévaloir du fait que certaines utilisations d'une technologie sont pratiques ne saurait en aucun cas constituer un argument décisif.",
+            "claim": "La praticité ne suffit pas à justifier une technologie si ses externalités sont insoutenables",
+            "grounds": "Exemples de technologies utiles abandonnées (amiante, bisphénol A, mines antipersonnel)",
+            "warrant": "Les technologies à externalités graves doivent être abandonnées malgré leur utilité",
+            "backing": "",
+            "qualifier": "",
+            "rebuttal": "",
+            "reasoning_type": "Argument par analogie",
+            "fallacies": ["fausse_equivalence", "petition_de_principe"],
+            "reliability": 2,
+            "reliability_rationale": "Comparaison forcée entre IAg et amiante (danger direct vs indirect). 'Insoutenable' présupposé sans démonstration.",
+            "sources_cited": []
+        },
+        {
+            "id": 4,
+            "label": "L'IAg ne réduit pas les inégalités",
+            "original_text": "Cette vision relève du même fantasme qui a pu exister aux débuts d'Internet et du web et qui ressurgit régulièrement depuis.",
+            "claim": "L'IAg ne réduira pas les inégalités dans l'accès à la connaissance",
+            "grounds": "Promesses non tenues d'Internet, inégalités sociales surdéterminent les effets",
+            "warrant": "Ce qui n'a pas marché pour Internet ne marchera pas pour l'IAg",
+            "backing": "Article AOC cité",
+            "qualifier": "",
+            "rebuttal": "",
+            "reasoning_type": "Argument historique + sociologique",
+            "fallacies": ["generalisation_hative"],
+            "reliability": 3,
+            "reliability_rationale": "Critique du solutionnisme fondée. Mais inférence Internet→IAg non garantie. Argument sociologique sur reproduction des inégalités solide.",
+            "sources_cited": [
+                {"name": "Article AOC", "type": "media", "quality": "medium"},
+                {"name": "Cairn (revue)", "type": "academic", "quality": "high"}
+            ]
+        },
+        {
+            "id": 5,
+            "label": "IAg n'est pas comparable à l'écriture",
+            "original_text": "Comparer l'écriture (ou la calculatrice) aux IAg et en déduire que celles et ceux qui critiquent aujourd'hui les IAg auraient pareillement critiqué l'écriture [...] a pour objectif de décrédibiliser les critiques.",
+            "claim": "L'analogie IAg/écriture est invalide car les différences sont plus importantes que les similitudes",
+            "grounds": "Écriture légère et appropriable vs IAg dépendante d'infrastructures, écriture autonome vs IAg centralisée, calculatrice exacte vs IAg avec hallucinations",
+            "warrant": "Si A≠B sur des critères essentiels, l'analogie A→B est invalide",
+            "backing": "Concept de prolétarisation (Stiegler)",
+            "qualifier": "",
+            "rebuttal": "",
+            "reasoning_type": "Contre-argumentation par distinction",
+            "fallacies": [],
+            "reliability": 4,
+            "reliability_rationale": "Distinction infrastructure légère/lourde factuelle. Dépendance centralisée avérée. Hallucinations documentées.",
+            "sources_cited": []
+        },
+        {
+            "id": 6,
+            "label": "Former SUR les risques, pas À l'usage",
+            "original_text": "Le constat de l'existence d'une pratique dans la société civile n'est pas en soi une raison décisive pour former nos étudiants à ladite pratique.",
+            "claim": "La mission éducative impose de former SUR les risques de l'IAg, pas À ses usages",
+            "grounds": "Mission éducative = valeurs démocratiques, modèle de prévention",
+            "warrant": "L'existence d'une pratique ne justifie pas sa promotion",
+            "backing": "Code de l'éducation article 123-3",
+            "qualifier": "",
+            "rebuttal": "",
+            "reasoning_type": "Argument normatif",
+            "fallacies": [],
+            "reliability": 3,
+            "reliability_rationale": "Référence au Code de l'éducation factuelle. Comparaison avec prévention des drogues discutable. Argument interprétatif.",
+            "sources_cited": [
+                {"name": "Code de l'éducation", "type": "legal", "quality": "high"}
+            ]
+        },
+        {
+            "id": 7,
+            "label": "La compétitivité ne justifie pas tout",
+            "original_text": "L'argument de la compétitivité ne saurait en aucun cas justifier de fermer les yeux sur cet aspect. A quoi sert de gagner la course si celle-ci nous conduit à un désastre environnemental?",
+            "claim": "L'argument de la compétitivité est invalide face à l'urgence écologique",
+            "grounds": "Concept de 'tyrannie du retard', catastrophe écologique",
+            "warrant": "La compétitivité ne prime pas sur la survie",
+            "backing": "",
+            "qualifier": "",
+            "rebuttal": "",
+            "reasoning_type": "Argument rhétorique (question retournée)",
+            "fallacies": ["petition_de_principe"],
+            "reliability": 2,
+            "reliability_rationale": "Raisonnement circulaire : présuppose que l'IAg mène au désastre (point en débat). Question rhétorique remplace la démonstration.",
+            "sources_cited": []
+        },
+        {
+            "id": 8,
+            "label": "L'IAg n'est pas inéluctable",
+            "original_text": "Le moment présent est précisément un moment charnière : [...] l'effet de verrouillage sociotechnique des IAg est encore limité.",
+            "claim": "L'IAg n'est pas inéluctable, nous sommes à un moment charnière",
+            "grounds": "Verrouillage sociotechnique encore limité, imaginaire contestable",
+            "warrant": "Ce qui n'est pas verrouillé peut encore être évité",
+            "backing": "Concept de verrouillage sociotechnique",
+            "qualifier": "",
+            "rebuttal": "",
+            "reasoning_type": "Argument d'opportunité + critique épistémologique",
+            "fallacies": [],
+            "reliability": 3,
+            "reliability_rationale": "Affirmation 'moment charnière' = jugement stratégique. Critique des imaginaires pertinente mais philosophique. Verrouillage = concept établi, son degré actuel discutable.",
+            "sources_cited": []
+        }
+    ],
+    "synthesis": {
+        "strengths": [
+            "Arguments 1 et 5 bien sourcés (AIE, Shift Project)",
+            "Réfutation de la fausse analogie avec l'écriture bien construite",
+            "Références à des concepts établis (effet rebond, verrouillage sociotechnique)"
+        ],
+        "weaknesses": [
+            "Argument 3 : fausse équivalence IAg/amiante",
+            "Argument 4 : généralisation hâtive depuis Internet",
+            "Argument 7 : raisonnement circulaire",
+            "Absence de contre-arguments ou nuances (texte militant)"
+        ],
+        "recurring_patterns": [
+            "Questions rhétoriques",
+            "Arguments d'autorité (AIE, Shift Project, Code de l'éducation)",
+            "Fausses équivalences",
+            "Pétitions de principe partielles"
+        ],
+        "methodological_note": "Texte explicitement militant (addendum à un manifeste). Ne prétend pas à la neutralité académique. L'évaluation juge la solidité des arguments, non leur conclusion."
+    }
+}
