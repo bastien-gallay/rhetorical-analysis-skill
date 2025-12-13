@@ -2,14 +2,13 @@
 
 ## Priorité haute
 
-- **Analyse d'URL** : Script `analyze_url.py` avec readability-lxml pour analyser directement une URL
-- **Packaging du Skill** : Créer une tache permettant la distribution rapide du Claude Skill
 - **Tests unitaires** : Couvrir `generate_analysis.py` avec des tests pytest
+- **CI/CD** : GitHub Actions pour les tests et le packaging
 
 ## Priorité moyenne
 
+- **Analyse d'URL** : Script `analyze_url.py` avec readability-lxml pour analyser directement une URL
 - **Export Mermaid** : Visualisation du graphe d'argumentation
-- **CI/CD** : GitHub Actions pour les tests et le packaging
 
 ## Priorité basse
 
