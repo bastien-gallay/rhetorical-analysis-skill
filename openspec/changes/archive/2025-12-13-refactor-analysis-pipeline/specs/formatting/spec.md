@@ -33,7 +33,7 @@ Le système **MUST** pouvoir générer un rapport d'analyse au format Markdown.
     - Une section détaillant le modèle de Toulmin pour chaque argument.
     - Une section pour l'évaluation CRAAP des sources.
 
-## MODIFIED Requirements
+## ADDED Requirements
 
 ### Requirement: Sélectionner le format de sortie via le CLI
 
