@@ -92,10 +92,11 @@ benchmark/
 | **Segmentation** | IoU (Intersection over Union) | Overlap entre segments identifiés |
 | **Classification Toulmin** | F1 par composant | Claim/Grounds/Warrant |
 | **Détection sophismes** | Precision/Recall/F1 | Par type de sophisme |
-| **Score fiabilité** | MAE (Mean Absolute Error) | |expert - model| |
+| **Score fiabilité** | MAE (Mean Absolute Error) | expert - model |
 | **Accord inter-annotateur** | Cohen's Kappa | Si plusieurs annotateurs |
 
 **Script d'évaluation** :
+
 ```python
 def evaluate_analysis(gold: dict, predicted: dict) -> dict:
     """Compare une annotation de référence avec la sortie du modèle."""
@@ -153,6 +154,7 @@ def evaluate_analysis(gold: dict, predicted: dict) -> dict:
 **Intégration progressive** :
 
 1. **Importer FixedLogic** comme référence pour les sophismes
+
    ```bash
    git clone https://github.com/tmakesense/logical-fallacy
    cp dataset-fixed/*.csv benchmark/external/
@@ -161,6 +163,7 @@ def evaluate_analysis(gold: dict, predicted: dict) -> dict:
 2. **Extraire des exemples du AAEC** pour calibrer la structure Toulmin
 
 3. **Créer des tests automatisés** :
+
    ```python
    @pytest.mark.parametrize("example", load_fixedlogic_samples())
    def test_fallacy_detection(example):
