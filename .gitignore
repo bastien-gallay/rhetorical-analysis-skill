@@ -49,3 +49,9 @@ Thumbs.db
 
 # Skill packaging (généré, pas tracké)
 *.skill
+
+# Données d'analyse sensibles (contenu sous droits d'auteur)
+# Les exemples dans assets/ sont synthétiques ou sous licence libre
+benchmark/annotations/
+output.json
+output.md

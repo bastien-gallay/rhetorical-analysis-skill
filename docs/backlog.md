@@ -2,7 +2,7 @@
 
 ## Priorité haute
 
-- **CI/CD** : GitHub Actions pour les tests et le packaging
+- ~~**CI/CD** : GitHub Actions pour les tests et le packaging~~ ✅
 - **Fallbacks lorsque le lien est inaccessible** : Gérer les erreurs HTTP, les pages vides, les blockages en proposant à l'utilisateur de fournir le contenu directement (Copier-coller ou imprimer ver PDF)
 
 ## Priorité moyenne

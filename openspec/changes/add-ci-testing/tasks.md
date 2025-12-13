@@ -4,33 +4,33 @@
 
 ### 1. Create test workflow file
 
-- Create `.github/workflows/test.yml`
-- Configure triggers: `push` to main, `pull_request` to main
-- Add concurrency settings to cancel stale runs
+- [x] Create `.github/workflows/test.yml`
+- [x] Configure triggers: `push` to main, `pull_request` to main
+- [x] Add concurrency settings to cancel stale runs
 
-**Verification**: File exists and YAML is valid (`uv run python -c "import yaml; yaml.safe_load(open('.github/workflows/test.yml'))"`)
+**Verification**: File exists and YAML is valid (`uv run python -c "import yaml; yaml.safe_load(open('.github/workflows/test.yml'))"`) ✅
 
 ### 2. Add environment setup steps
 
-- Checkout repository
-- Setup Python 3.10 via `actions/setup-python@v5`
-- Install uv via `astral-sh/setup-uv@v4` with caching enabled
-- Install dependencies via `uv sync --all-extras`
+- [x] Checkout repository
+- [x] Setup Python 3.10 via `actions/setup-python@v5`
+- [x] Install uv via `astral-sh/setup-uv@v4` with caching enabled
+- [x] Install dependencies via `uv sync --all-extras`
 
-**Verification**: Run workflow manually or push test branch
+**Verification**: Run workflow manually or push test branch ✅
 
 ### 3. Add test execution step
 
-- Run `uv run pytest tests/ -v --tb=short`
-- Ensure exit code propagates correctly
+- [x] Run `uv run pytest tests/ -v --tb=short`
+- [x] Ensure exit code propagates correctly
 
-**Verification**: Push a branch and verify tests run in Actions tab
+**Verification**: Push a branch and verify tests run in Actions tab ✅
 
 ### 4. Update backlog
 
-- Mark CI/CD item as complete in `docs/backlog.md`
+- [x] Mark CI/CD item as complete in `docs/backlog.md`
 
-**Verification**: `grep -q "CI/CD" docs/backlog.md` confirms update
+**Verification**: `grep -q "CI/CD" docs/backlog.md` confirms update ✅
 
 ## Parallelizable Work
 
