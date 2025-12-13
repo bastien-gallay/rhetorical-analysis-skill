@@ -34,19 +34,6 @@ jobs:
       - name: Package skill
         run: uvx --from . python scripts/package_skill.py --output dist/
       
-      - name: Extract version and set artifact name
-        id: version
-        run: |
-          SKILL_FILE=$(ls dist/*.skill)
-          echo "skill_file=${SKILL_FILE}" >> $GITHUB_OUTPUT
-          echo "skill_name=$(basename ${SKILL_FILE})" >> $GITHUB_OUTPUT
-      
-      - name: Generate SHA256 checksum
-        run: |
-          cd dist
-          sha256sum *.skill > checksums.txt
-          cat checksums.txt
-      
       - name: Determine if pre-release
         id: prerelease
         run: |
@@ -60,9 +47,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            dist/*.skill
-            dist/checksums.txt
+          files: dist/*.skill
           generate_release_notes: true
           prerelease: ${{ steps.prerelease.outputs.is_prerelease }}
           fail_on_unmatched_files: true
