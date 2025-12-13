@@ -96,15 +96,15 @@ Le README sera mis à jour avec :
 
 ## Success Criteria
 
-- [ ] Workflow GitHub Actions créé et fonctionnel
-- [ ] Trigger sur création de tag Git
-- [ ] Archive .skill générée avec succès
-- [ ] Checksums SHA256 générés pour l'archive
-- [ ] GitHub Release créée automatiquement avec artifacts téléchargeables (.skill + checksums)
-- [ ] README mis à jour avec section Installation/Download
-- [ ] Instructions de vérification d'intégrité documentées
-- [ ] Badge de release ajouté au README
-- [ ] Documentation du workflow de release pour les mainteneurs
+- [x] Workflow GitHub Actions créé et fonctionnel
+- [x] Trigger sur création de tag Git
+- [x] Archive .skill générée avec succès
+- [x] Checksums SHA256 générés pour l'archive
+- [x] GitHub Release créée automatiquement avec artifacts téléchargeables (.skill + checksums)
+- [x] README mis à jour avec section Installation/Download
+- [x] Instructions de vérification d'intégrité documentées
+- [x] Badge de release ajouté au README
+- [x] Documentation du workflow de release pour les mainteneurs
 
 ## Related Specs
 
