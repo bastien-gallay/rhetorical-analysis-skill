@@ -22,6 +22,7 @@ dev = [
     "httpx>=0.25.0",           # Pour fetch URL
     "beautifulsoup4>=4.12.0",  # Pour extraction HTML
     "readability-lxml>=0.8.0", # Pour extraction contenu article
+    "ruff>=0.1.0",
 ]
 
 [project.scripts]

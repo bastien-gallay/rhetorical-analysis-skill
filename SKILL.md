@@ -52,10 +52,17 @@ Voir `references/fallacies-catalog.md` pour la liste complète des sophismes à 
 2. Exécuter le script de génération :
 
    ```bash
-   python scripts/generate_analysis.py analysis.json rapport.xlsx
+   python scripts/generate_analysis.py analysis.json output.[xlsx|json|md] --format [xlsx|json|md]
    ```
 
-Le script génère un XLSX avec 5 feuilles :
+**Exemples :**
+```bash
+python scripts/generate_analysis.py analysis.json rapport_analyse.xlsx --format xlsx
+python scripts/generate_analysis.py analysis.json analysis_output.json --format json
+python scripts/generate_analysis.py analysis.json rapport.md --format md
+```
+
+Le script génère un fichier de sortie selon le format choisi. Pour le format XLSX, il contient 5 feuilles :
 - **Analyse rhétorique** : Tableau principal
 - **Détail Toulmin** : Structure complète de chaque argument
 - **Évaluation sources (CRAAP)** : Scores des sources citées

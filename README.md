@@ -34,7 +34,14 @@ uv sync --all-extras
 ### Generate Analysis Report
 
 ```bash
-uv run python scripts/generate_analysis.py input.json output.xlsx
+uv run python scripts/generate_analysis.py input.json output.[xlsx|json|md] --format [xlsx|json|md]
+```
+
+**Examples:**
+```bash
+uv run python scripts/generate_analysis.py analysis.json rapport_analyse.xlsx --format xlsx
+uv run python scripts/generate_analysis.py analysis.json analysis_output.json --format json
+uv run python scripts/generate_analysis.py analysis.json rapport.md --format md
 ```
 
 ### Package the Skill
