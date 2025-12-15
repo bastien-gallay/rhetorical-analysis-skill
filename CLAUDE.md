@@ -52,6 +52,18 @@ uv run python scripts/package_skill.py --dry-run
 
 # Packager dans un répertoire spécifique
 uv run python scripts/package_skill.py --output dist/
+
+# Créer une release (bump de version, tag, push)
+uv run python scripts/release.py patch           # 0.1.3 -> 0.1.4
+uv run python scripts/release.py minor           # 0.1.3 -> 0.2.0
+uv run python scripts/release.py major           # 0.1.3 -> 1.0.0
+uv run python scripts/release.py 2.0.0           # Version explicite
+
+# Prévisualiser une release sans modification
+uv run python scripts/release.py --dry-run patch
+
+# Créer le tag localement sans push
+uv run python scripts/release.py --no-push patch
 ```
 
 ## Conventions
