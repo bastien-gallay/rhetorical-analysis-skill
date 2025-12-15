@@ -243,6 +243,76 @@ def get_last_tag() -> str | None:
         return None
 
 
+def get_all_version_tags() -> list[tuple[str, Version]]:
+    """Get all version tags sorted by version (descending).
+
+    Returns:
+        List of (tag_name, Version) tuples, newest first
+    """
+    try:
+        output = run_git(["tag", "-l", "v*"])
+    except ReleaseError:
+        return []
+
+    tags: list[tuple[str, Version]] = []
+    for line in output.split("\n"):
+        tag = line.strip()
+        if not tag:
+            continue
+        # Extract version from tag (remove 'v' prefix)
+        version_str = tag.lstrip("v")
+        if is_valid_semver(version_str):
+            try:
+                version = Version.parse(version_str)
+                tags.append((tag, version))
+            except ReleaseError:
+                continue
+
+    # Sort by version descending
+    tags.sort(key=lambda x: (x[1].major, x[1].minor, x[1].patch), reverse=True)
+    return tags
+
+
+def get_last_tag_of_level(
+    bump_type: str, current_version: Version
+) -> str | None:
+    """Get the last tag matching the release level.
+
+    For patch: returns last tag in the same minor series (X.Y.*)
+    For minor: returns last X.Y.0 tag in the same major series
+    For major: returns last X.0.0 tag
+
+    Args:
+        bump_type: One of 'patch', 'minor', 'major'
+        current_version: Current version to compare against
+
+    Returns:
+        Tag name or None if no matching tag exists
+    """
+    all_tags = get_all_version_tags()
+    if not all_tags:
+        return None
+
+    for tag_name, version in all_tags:
+        if bump_type == "patch":
+            # Same major.minor series
+            if (
+                version.major == current_version.major
+                and version.minor == current_version.minor
+            ):
+                return tag_name
+        elif bump_type == "minor":
+            # Last X.Y.0 in same major series
+            if version.major == current_version.major and version.patch == 0:
+                return tag_name
+        elif bump_type == "major":
+            # Last X.0.0 tag
+            if version.minor == 0 and version.patch == 0:
+                return tag_name
+
+    return None
+
+
 def get_commits_since(ref: str | None = None) -> list[str]:
     """Get commit messages since a reference.
 
@@ -463,8 +533,12 @@ def do_release(
         notes = existing_notes[str(target_version)]
         print(f"Found existing release notes for v{target_version}")
     else:
-        # Generate from commits
-        last_tag = get_last_tag()
+        # Generate from commits since last tag of the same level
+        # For explicit versions, fall back to last tag
+        if bump_or_version in ("patch", "minor", "major"):
+            last_tag = get_last_tag_of_level(bump_or_version, current_version)
+        else:
+            last_tag = get_last_tag()
         commits = get_commits_since(last_tag)
         proposed_notes = generate_release_notes_template(commits)
 
