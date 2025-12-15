@@ -44,7 +44,7 @@ class Version(NamedTuple):
         return f"{self.major}.{self.minor}.{self.patch}"
 
     @classmethod
-    def parse(cls, version_str: str) -> "Version":
+    def parse(cls, version_str: str) -> Version:
         """Parse a version string into a Version object.
 
         Args:
@@ -63,7 +63,7 @@ class Version(NamedTuple):
             )
         return cls(int(match.group(1)), int(match.group(2)), int(match.group(3)))
 
-    def bump(self, bump_type: str) -> "Version":
+    def bump(self, bump_type: str) -> Version:
         """Create a new version with the specified bump.
 
         Args:
@@ -497,7 +497,7 @@ def do_release(
     # Preview actions
     print("\nActions to perform:")
     print(f"  1. Update pyproject.toml version to {target_version}")
-    print(f"  2. Add release notes to RELEASE.md")
+    print("  2. Add release notes to RELEASE.md")
     print(f"  3. Create annotated tag {tag_name}")
     if not skip_push:
         print(f"  4. Push tag {tag_name} to origin")
