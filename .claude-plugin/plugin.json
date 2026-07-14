@@ -1,0 +1,16 @@
+{
+  "name": "rhetorical-analysis",
+  "version": "0.1.0",
+  "description": "Analyse rhétorique et épistémologique d'articles, discours et textes argumentatifs.",
+  "author": { "name": "Bastien Gallay" },
+  "homepage": "https://github.com/bastien-gallay/rhetorical-analysis-skill",
+  "repository": "https://github.com/bastien-gallay/rhetorical-analysis-skill",
+  "license": "MIT",
+  "keywords": [
+    "rhetorical-analysis",
+    "argumentation",
+    "fallacies",
+    "epistemology",
+    "critical-thinking"
+  ]
+}
