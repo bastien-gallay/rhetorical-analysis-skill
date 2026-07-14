@@ -14,6 +14,8 @@ from scripts.release import (
     ReleaseError,
     Version,
     generate_release_notes_template,
+    get_all_version_tags,
+    get_last_tag_of_level,
     is_valid_semver,
     parse_release_notes,
     read_pyproject_version,
@@ -351,6 +353,140 @@ class TestGitOperations:
                 check_clean_working_directory()
 
 
+class TestGetAllVersionTags:
+    """Tests for get_all_version_tags function."""
+
+    def test_returns_sorted_tags_descending(self):
+        """Test that tags are sorted by version descending."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(
+                stdout="v1.0.0\nv2.0.0\nv1.1.0\nv0.9.0\n",
+                returncode=0,
+            )
+
+            tags = get_all_version_tags()
+            versions = [str(v) for _, v in tags]
+            assert versions == ["2.0.0", "1.1.0", "1.0.0", "0.9.0"]
+
+    def test_filters_invalid_tags(self):
+        """Test that non-semver tags are filtered out."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(
+                stdout="v1.0.0\nvbeta\nv2.0.0\nv1.0.0-rc1\n",
+                returncode=0,
+            )
+
+            tags = get_all_version_tags()
+            tag_names = [name for name, _ in tags]
+            assert "v1.0.0" in tag_names
+            assert "v2.0.0" in tag_names
+            assert "vbeta" not in tag_names
+            assert "v1.0.0-rc1" not in tag_names
+
+    def test_empty_tags(self):
+        """Test with no tags."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(stdout="", returncode=0)
+
+            tags = get_all_version_tags()
+            assert tags == []
+
+    def test_handles_git_error(self):
+        """Test that git errors return empty list."""
+        from scripts.release import ReleaseError
+
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.side_effect = subprocess.CalledProcessError(1, "git")
+
+            tags = get_all_version_tags()
+            assert tags == []
+
+
+class TestGetLastTagOfLevel:
+    """Tests for get_last_tag_of_level function."""
+
+    def test_patch_returns_same_minor_series(self):
+        """Patch release should return last tag in same minor series."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(
+                stdout="v1.2.5\nv1.2.4\nv1.2.3\nv1.1.0\nv1.0.0\n",
+                returncode=0,
+            )
+
+            current = Version(1, 2, 3)
+            tag = get_last_tag_of_level("patch", current)
+            assert tag == "v1.2.5"
+
+    def test_patch_no_match_in_series(self):
+        """Patch release with no tags in current minor series."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(
+                stdout="v1.1.0\nv1.0.0\n",
+                returncode=0,
+            )
+
+            current = Version(1, 2, 0)
+            tag = get_last_tag_of_level("patch", current)
+            assert tag is None
+
+    def test_minor_returns_last_x_y_0_in_major(self):
+        """Minor release should return last X.Y.0 tag in same major."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(
+                stdout="v1.3.2\nv1.3.0\nv1.2.5\nv1.2.0\nv1.1.0\nv1.0.0\n",
+                returncode=0,
+            )
+
+            current = Version(1, 2, 5)
+            tag = get_last_tag_of_level("minor", current)
+            assert tag == "v1.3.0"
+
+    def test_minor_skips_patch_versions(self):
+        """Minor should only match X.Y.0 tags, not X.Y.Z."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(
+                stdout="v1.2.5\nv1.2.3\nv1.1.0\nv1.0.0\n",
+                returncode=0,
+            )
+
+            current = Version(1, 2, 5)
+            tag = get_last_tag_of_level("minor", current)
+            assert tag == "v1.1.0"
+
+    def test_major_returns_last_x_0_0(self):
+        """Major release should return last X.0.0 tag."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(
+                stdout="v2.1.0\nv2.0.0\nv1.5.3\nv1.0.0\n",
+                returncode=0,
+            )
+
+            current = Version(1, 5, 3)
+            tag = get_last_tag_of_level("major", current)
+            assert tag == "v2.0.0"
+
+    def test_major_skips_non_major_versions(self):
+        """Major should only match X.0.0 tags."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(
+                stdout="v2.1.0\nv1.5.3\nv1.2.0\nv1.0.0\n",
+                returncode=0,
+            )
+
+            current = Version(1, 5, 3)
+            tag = get_last_tag_of_level("major", current)
+            assert tag == "v1.0.0"
+
+    def test_no_tags_returns_none(self):
+        """No tags should return None."""
+        with mock.patch("subprocess.run") as mock_run:
+            mock_run.return_value = mock.Mock(stdout="", returncode=0)
+
+            current = Version(1, 0, 0)
+            tag = get_last_tag_of_level("patch", current)
+            assert tag is None
+
+
 class TestIntegrationDryRun:
     """Integration tests using --dry-run mode."""
 
@@ -383,7 +519,7 @@ version = "1.0.0"
 
         with (
             mock.patch("scripts.release.tag_exists", return_value=(False, False)),
-            mock.patch("scripts.release.get_last_tag", return_value="v1.0.0"),
+            mock.patch("scripts.release.get_last_tag_of_level", return_value="v1.0.0"),
             mock.patch(
                 "scripts.release.get_commits_since",
                 return_value=["abc123 feat: new feature"],

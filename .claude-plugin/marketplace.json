@@ -1,0 +1,27 @@
+{
+  "name": "rhetorical-analysis-skill",
+  "owner": { "name": "Bastien Gallay" },
+  "metadata": {
+    "description": "rhetorical-analysis-skill — single-plugin marketplace.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "rhetorical-analysis",
+      "source": "./",
+      "description": "Analyse rhétorique et épistémologique d'articles, discours et textes argumentatifs.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "homepage": "https://github.com/bastien-gallay/rhetorical-analysis-skill",
+      "repository": "https://github.com/bastien-gallay/rhetorical-analysis-skill",
+      "category": "productivity",
+      "tags": [
+        "rhetorical-analysis",
+        "argumentation",
+        "fallacies",
+        "epistemology",
+        "critical-thinking"
+      ]
+    }
+  ]
+}
