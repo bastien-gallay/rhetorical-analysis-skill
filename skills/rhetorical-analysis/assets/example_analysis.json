@@ -1,0 +1,148 @@
+{
+    "metadata": {
+        "title": "[Exemple synthétique] Tribune : Pour une mobilité urbaine repensée",
+        "source": "Contenu fictif créé pour démonstration",
+        "date_analysis": "2025-01-01",
+        "analyst": "Claude",
+        "license": "CC0 - Domaine public",
+        "note": "Cet exemple est entièrement fictif et conçu pour illustrer les différentes structures argumentatives et niveaux de fiabilité."
+    },
+    "arguments": [
+        {
+            "id": 1,
+            "label": "Argument factuel bien sourcé",
+            "original_text": "Les transports représentent 31% des émissions de GES en France selon le CITEPA. La voiture individuelle en constitue la moitié. Réduire cette part est donc un levier majeur de décarbonation.",
+            "claim": "La réduction de l'usage de la voiture individuelle est un levier important de décarbonation",
+            "grounds": "31% des émissions = transports, dont 50% = voiture individuelle",
+            "warrant": "Agir sur les postes d'émission les plus importants maximise l'impact",
+            "backing": "Données CITEPA (inventaire national officiel)",
+            "qualifier": "En France",
+            "rebuttal": "Non mentionné (pourrait être : efficacité variable selon les territoires)",
+            "reasoning_type": "Raisonnement factuel avec données chiffrées",
+            "fallacies": [],
+            "reliability": 5,
+            "reliability_rationale": "Source officielle (CITEPA), données vérifiables, raisonnement logique valide.",
+            "sources_cited": [
+                {
+                    "name": "CITEPA - Inventaire national des émissions",
+                    "craap_score": {
+                        "currency": 5,
+                        "relevance": 5,
+                        "authority": 5,
+                        "accuracy": 5,
+                        "purpose": 5
+                    }
+                }
+            ],
+            "comment": "Exemple d'argument solide : données officielles, raisonnement clair, conclusion proportionnée."
+        },
+        {
+            "id": 2,
+            "label": "Argument avec sophisme identifié",
+            "original_text": "Les opposants au vélo en ville sont les mêmes qui s'opposaient au métro au XIXe siècle. Ils avaient tort alors, ils ont tort maintenant.",
+            "claim": "L'opposition au vélo urbain est injustifiée",
+            "grounds": "Analogie historique avec l'opposition au métro",
+            "warrant": "Les oppositions passées au progrès se sont révélées infondées",
+            "backing": "Référence historique non sourcée",
+            "qualifier": "",
+            "rebuttal": "Non reconnu",
+            "reasoning_type": "Argument par analogie historique",
+            "fallacies": [
+                {
+                    "name": "Fausse analogie",
+                    "description": "Le contexte, les enjeux et les opposants ne sont pas comparables entre métro (XIXe) et vélo (XXIe)",
+                    "severity": "modérée"
+                },
+                {
+                    "name": "Homme de paille",
+                    "description": "Les opposants actuels au vélo ne sont pas caractérisés précisément",
+                    "severity": "légère"
+                }
+            ],
+            "reliability": 2,
+            "reliability_rationale": "Analogie forcée, aucune source, généralisations abusives sur 'les opposants'.",
+            "sources_cited": [],
+            "comment": "Exemple de sophisme : l'analogie historique ne prouve rien sur le débat actuel."
+        },
+        {
+            "id": 3,
+            "label": "Argument d'autorité partiel",
+            "original_text": "Selon une étude de l'université de Villefranche, 73% des trajets domicile-travail font moins de 10 km, distance parfaitement cyclable.",
+            "claim": "La majorité des trajets domicile-travail sont réalisables à vélo",
+            "grounds": "73% des trajets < 10 km",
+            "warrant": "10 km est une distance cyclable",
+            "backing": "Étude universitaire (non vérifiable)",
+            "qualifier": "trajets domicile-travail uniquement",
+            "rebuttal": "Conditions météo, dénivelé, charge transportée non pris en compte",
+            "reasoning_type": "Argument factuel avec source académique",
+            "fallacies": [],
+            "reliability": 3,
+            "reliability_rationale": "Source académique mais non vérifiable. Le raisonnement ignore des facteurs importants (météo, handicap, âge).",
+            "sources_cited": [
+                {
+                    "name": "Université de Villefranche (fictive)",
+                    "craap_score": {
+                        "currency": 3,
+                        "relevance": 4,
+                        "authority": 3,
+                        "accuracy": 3,
+                        "purpose": 4
+                    }
+                }
+            ],
+            "comment": "Exemple de source académique insuffisamment référencée. Le raisonnement est valide mais incomplet."
+        },
+        {
+            "id": 4,
+            "label": "Argument émotionnel avec appel à la peur",
+            "original_text": "Si nous ne changeons pas nos habitudes maintenant, nos enfants vivront dans des villes irrespirables où les canicules tueront des milliers de personnes chaque été.",
+            "claim": "Le changement de comportement est urgent",
+            "grounds": "Scénario catastrophe (villes irrespirables, mortalité canicules)",
+            "warrant": "La gravité des conséquences justifie l'action immédiate",
+            "backing": "Aucune source citée",
+            "qualifier": "",
+            "rebuttal": "Non reconnu",
+            "reasoning_type": "Argument émotionnel / appel à la peur",
+            "fallacies": [
+                {
+                    "name": "Appel à la peur",
+                    "description": "Utilisation de scénarios catastrophes pour court-circuiter le raisonnement critique",
+                    "severity": "modérée"
+                },
+                {
+                    "name": "Faux dilemme",
+                    "description": "Présente le choix comme binaire (changer maintenant ou catastrophe)",
+                    "severity": "légère"
+                }
+            ],
+            "reliability": 2,
+            "reliability_rationale": "Aucune source, scénario non quantifié, manipulation émotionnelle.",
+            "sources_cited": [],
+            "comment": "Exemple d'appel à l'émotion : peut être persuasif mais ne constitue pas un argument rationnel."
+        }
+    ],
+    "synthesis": {
+        "strengths": [
+            "Argument 1 : excellente utilisation de données officielles avec raisonnement valide",
+            "Argument 3 : tente de s'appuyer sur une source académique"
+        ],
+        "weaknesses": [
+            "Argument 2 : analogie historique non pertinente",
+            "Argument 4 : appel à la peur sans données",
+            "Manque général de contre-arguments et de nuances"
+        ],
+        "recurring_patterns": [
+            "Mélange d'arguments factuels et émotionnels",
+            "Sources de qualité variable (officielle vs non vérifiable)",
+            "Absence de reconnaissance des limites"
+        ],
+        "overall_craap_score": {
+            "currency": 4,
+            "relevance": 4,
+            "authority": 3,
+            "accuracy": 3,
+            "purpose": 3
+        },
+        "methodological_note": "Cet exemple synthétique illustre différents niveaux de qualité argumentative. Dans une analyse réelle, chaque argument serait évalué avec les mêmes critères."
+    }
+}
